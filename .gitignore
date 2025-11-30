@@ -1,0 +1,52 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.eggs/
+*.egg
+*.manifest
+*.spec
+
+# ---- Virtual Env ----
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ---- Environment Variables ----
+.env
+.settings
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Data Files (nếu muốn bỏ qua các file lớn) ----
+*.csv
+*.xlsx
+*.xls
+*.parquet
+
+# Nhưng nếu cần CSV để deploy thì KHÔNG ignore folder data/
+# data/*.csv  <-- bỏ comment nếu KHÔNG muốn upload file CSV
+
+# ---- Logs ----
+*.log
+
+# ---- VSCode ----
+.vscode/
+.settings/
+.history/
+*.code-workspace
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+
+# ---- Build / cache ----
+build/
+dist/
+.cache/

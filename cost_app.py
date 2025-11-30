@@ -90,7 +90,7 @@ layout = html.Div(className='main-container', children=[
             id='cost-mode-selector',
             options=[
                 {'label': 'So sánh Cơ bản (Biểu đồ cột)', 'value': 'bar'},
-                {'label': 'Phân tích Tương quan', 'value': 'scatter'},
+                # {'label': 'Phân tích Tương quan', 'value': 'scatter'},
                 # {'label': ' Biểu đồ Radar (Đa chiều)', 'value': 'radar'},
                 {'label': ' Biểu đồ Nhiệt (Heatmap)', 'value': 'heatmap'},
                 # {'label': ' Biểu đồ Hộp (Box Plot)', 'value': 'box'},

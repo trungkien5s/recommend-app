@@ -1,4 +1,5 @@
 # forecast_app.py
+import os
 import dash
 from dash import dcc, html, dash_table
 from dash.dependencies import Input, Output
@@ -7,16 +8,19 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import pandas as pd
 import requests
+from dotenv import load_dotenv
+load_dotenv()
 
 from app import app
 
 # ***************************************************************
-API_KEY = "cae7dc5a4513108f90858b008b334a43" 
+API_KEY = os.getenv("OPENWEATHERMAP_API_KEY") 
 # ***************************************************************
 
 # --- Tải Dữ liệu (chỉ để lấy danh sách thành phố) ---
 try:
-    file_path_weather = r'C:\Users\admin\Downloads\europe_weather_2019_2025_sample_extended (3).csv'
+    file_id_weather = "12moZNfbEpVNO39HxQXnIPSoM1ItAR-sE"
+    file_path_weather = f"https://drive.google.com/uc?export=download&id={file_id_weather}"
     df_weather = pd.read_csv(file_path_weather)
     ALL_CITIES = sorted(df_weather['City'].unique())
 except FileNotFoundError:
