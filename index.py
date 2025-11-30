@@ -10,6 +10,7 @@ import forecast_app
 import review_app
 import recommend_app   # <-- THÊM MỚI: Import trang Gợi ý
 
+server = app.server
 # --- Layout chính ---
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
