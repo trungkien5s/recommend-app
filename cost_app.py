@@ -24,7 +24,14 @@ def get_metric_label(metric_name: str) -> str:
     return METRIC_LABELS_VI.get(metric_name, metric_name)
 
 # --- 1. Load Data ---
-file_path_cost = r'C:\Users\admin\Downloads\wikipedia_cost_of_living_indices4 (1).csv'
+file_id_cost = "1Deat1SWIY1f0cWWsxhAzDF1K5YIY83rT"
+file_path_cost = f"https://drive.google.com/uc?export=download&id={file_id_cost}"
+
+try:
+    df_cost = pd.read_csv(file_path_cost)
+except Exception as e:
+    print("Lỗi tải dữ liệu cost:", e)
+    df_cost = pd.DataFrame()
 
 BUDGET_LABELS = ['Thấp', 'Trung bình', 'Cao']
 BUDGET_BINS = [0, 40, 80, float('inf')]

@@ -9,7 +9,14 @@ import pandas as pd
 from app import app
 
 # --- 1. Tải và Xử lý Dữ liệu Thời tiết ---
-file_path_weather = r'D:\Trực quan hóa\Trực quan cuối kỳ\demo_final\europe_weather_2019_2025_sample_extended.csv'
+file_id_weather = "12moZNfbEpVNO39HxQXnIPSoM1ItAR-sE"
+file_path_weather = f"https://drive.google.com/uc?export=download&id={file_id_weather}"
+
+try:
+    df = pd.read_csv(file_path_weather)
+except Exception as e:
+    print("Lỗi tải dữ liệu thời tiết:", e)
+    df = pd.DataFrame()
 
 try:
     df = pd.read_csv(file_path_weather)

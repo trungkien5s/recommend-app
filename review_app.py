@@ -9,7 +9,15 @@ from app import app
 # --- 1. Load & Chuẩn bị dữ liệu ---
 
 # Đường dẫn file (sửa lại nếu cần)
-file_path_review = r"C:\Users\admin\Downloads\google_review_ratings_rounded (2).csv"
+file_id_review = "1tcsQodOIGlroMDDdfYowl1OHJUSHYrRB"
+file_path_review = f"https://drive.google.com/uc?export=download&id={file_id_review}"
+
+try:
+    df_raw = pd.read_csv(file_path_review)
+except Exception as e:
+    print("Lỗi tải dữ liệu review:", e)
+    df_raw = pd.DataFrame()
+
 
 try:
     df_raw = pd.read_csv(file_path_review)

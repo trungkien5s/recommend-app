@@ -13,7 +13,15 @@ from app import app
 # -----------------------------
 
 # 1.1. Cost of Living
-file_path_cost = r'C:\Users\admin\Downloads\wikipedia_cost_of_living_indices4 (1).csv'
+file_id_cost = "1Deat1SWIY1f0cWWsxhAzDF1K5YIY83rT"
+file_path_cost = f"https://drive.google.com/uc?export=download&id={file_id_cost}"
+
+try:
+    df_cost = pd.read_csv(file_path_cost)
+except Exception as e:
+    print("Lỗi tải dữ liệu cost:", e)
+    df_cost = pd.DataFrame()
+
 try:
     df_cost = pd.read_csv(file_path_cost)
     df_cost = df_cost.dropna(subset=['Country'])
@@ -31,7 +39,15 @@ except FileNotFoundError:
     df_cost_cost = pd.DataFrame(columns=['Country', 'Average Cost Index'])
 
 # 1.2. Weather (thời tiết theo tháng)
-file_path_weather = r'C:\Users\admin\Downloads\europe_weather_2019_2025_sample_extended (3).csv'
+file_id_weather = "12moZNfbEpVNO39HxQXnIPSoM1ItAR-sE"
+file_path_weather = f"https://drive.google.com/uc?export=download&id={file_id_weather}"
+
+try:
+    df = pd.read_csv(file_path_weather)
+except Exception as e:
+    print("Lỗi tải dữ liệu thời tiết:", e)
+    df = pd.DataFrame()
+
 try:
     df_weather = pd.read_csv(file_path_weather)
     if not df_weather.empty:
@@ -46,7 +62,15 @@ except FileNotFoundError:
     df_weather['Date'] = pd.to_datetime([])
 
 # 1.3. Review Rating
-file_path_review = r"C:\Users\admin\Downloads\google_review_ratings_rounded (2).csv"
+file_id_review = "1tcsQodOIGlroMDDdfYowl1OHJUSHYrRB"
+file_path_review = f"https://drive.google.com/uc?export=download&id={file_id_review}"
+
+try:
+    df_raw = pd.read_csv(file_path_review)
+except Exception as e:
+    print("Lỗi tải dữ liệu review:", e)
+    df_raw = pd.DataFrame()
+
 try:
     df_raw_review = pd.read_csv(file_path_review)
     id_vars = ['User', 'Country']
