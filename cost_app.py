@@ -24,8 +24,10 @@ def get_metric_label(metric_name: str) -> str:
     return METRIC_LABELS_VI.get(metric_name, metric_name)
 
 # --- 1. Load Data ---
-file_id_cost = "1Deat1SWIY1f0cWWsxhAzDF1K5YIY83rT"
-file_path_cost = f"https://drive.google.com/uc?export=download&id={file_id_cost}"
+file_id = "1q5qP66oBoxCEXtGrvE5jtMT5aTATfpn6"
+file_path_cost = f"https://drive.google.com/uc?export=download&id={file_id}"
+
+
 
 try:
     df_cost = pd.read_csv(file_path_cost)
